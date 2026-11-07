@@ -1,8 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        CuentaAhorros cuentaAhorros = new CuentaAhorros(3, "Laura Gómez", "AH-001", 500000);
-        CuentaAhorrosPremium cuentaPremium = new CuentaAhorrosPremium(2500, "Carlos Rios", "PR-002", 2000000, 4);
-        CuentaCorriente cuentaCorriente = new CuentaCorriente (500000, "Empresa XYZ", "CC-003", 100000);
+        CuentaAhorros cuentaAhorros = new CuentaAhorros("Laura Gómez", "AH-001", 500000, 3);
+        CuentaAhorrosPremium cuentaPremium = new CuentaAhorrosPremium("Carlos Rios", "PR-002", 2000000, 4, 2500);
+        CuentaCorriente cuentaCorriente = new CuentaCorriente("Empresa XYZ", "CC-003", 100000, 500000);
 
         cuentaAhorros.depositar(50000);
         cuentaAhorros.depositar(100000, "Nómina Julio");
@@ -22,6 +22,6 @@ public class App {
         cuentaPremium.mostrarInfo();
         cuentaCorriente.mostrarInfo();
 
-        cuentaAhorros.aplicarIntereses();
+        cuentaAhorros.aplicarInteres();
     }
 }

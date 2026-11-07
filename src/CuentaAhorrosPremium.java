@@ -1,8 +1,8 @@
 public final class CuentaAhorrosPremium extends CuentaAhorros{
     private double comisionPorRetiro;
 
-    public CuentaAhorrosPremium(double comisionPorRetiro, String titular, String numeroCuenta, double saldo, double tasaInteres){
-        super(titular, numeroCuenta, saldo, tasaInteres);
+    public CuentaAhorrosPremium(String titular, String numeroCuenta, double saldo, double tasaInteres, double comisionPorRetiro){
+        super(titular, numeroCuenta, saldo, 0);
         this.comisionPorRetiro = comisionPorRetiro;
     }
 
@@ -17,9 +17,9 @@ public final class CuentaAhorrosPremium extends CuentaAhorros{
             System.out.println("Saldo insuficiente para cubrir retiro + comisión de " + this.comisionPorRetiro);
             return false;
         }else{
-        super.setSaldo(super.getSaldo() - totalADescontar);
-        System.out.println("Retiro de " + monto + "comisión " + this.comisionPorRetiro + ". Saldo: " + super.getSaldo());
-        return true;
+            super.setSaldo(super.getSaldo() - totalADescontar);
+            System.out.println("Retiro de " + monto + "comisión " + this.comisionPorRetiro + ". Saldo: " + super.getSaldo());
+            return true;
         }
     }
 
